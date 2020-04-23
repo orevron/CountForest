@@ -14,6 +14,9 @@ public class Main {
         if (angle < 0){ // can also throw an error...
             angle = angle * -1;
         }
+        if (angle == 360.0){
+            return forest.size();
+        }
         //calculate the degree from center to each tree
         for (Tree t : forest){
             t.calculateAndSetDegree(0,0);
@@ -32,11 +35,16 @@ public class Main {
             }else{
                 while(firstTreeIndex <= currIndex){ //we will move firstTreeIndex to the next tree which is relevant
                     if (treesCanBeFoundOnSameViewAngle(forest.get(firstTreeIndex), forest.get(currIndex), angle)) {
+                        if (firstTreeIndex == currIndex){
+                            currTreesInAngle = 1;
+                        }else{
+                            currTreesInAngle++;
+                        }
                         break; //TODO: check for edge cases (maybe should do+- 1 tree in currTreesInAngle)
                     }else{
                         currTreesInAngle--; //we will decrease by 1 currTreesInAngle
+                        firstTreeIndex++;
                     }
-                    firstTreeIndex++;
                 }
             }
             currIndex++;
@@ -59,9 +67,13 @@ public class Main {
                 currTreesInAngle++;
                 maxTreesInAngle = Math.max(currTreesInAngle, maxTreesInAngle);
             }else{
-                while(firstTreeIndex <= forest.size()){ //we will move firstTreeIndex to the next tree which is relevant
+                while(firstTreeIndex < forest.size()){ //we will move firstTreeIndex to the next tree which is relevant
                     if (treesCanBeFoundOnSameViewAngle(forest.get(firstTreeIndex), forest.get(currIndex), angle)) {
-                        break; //TODO: check for edge cases (maybe should do+- 1 tree in currTreesInAngle)
+                        if (firstTreeIndex == currIndex){
+                            currTreesInAngle = 1;
+                        }else{
+                            currTreesInAngle++;
+                        }
                     }else{
                         currTreesInAngle--; //we will decrease by 1 currTreesInAngle
                     }
@@ -75,18 +87,23 @@ public class Main {
 
 
     public static boolean treesCanBeFoundOnSameViewAngle(Tree t1, Tree t2, double angle){
-        return Math.abs(t1.getDegreeFromCenter() - t2.getDegreeFromCenter()) <= angle;
+        //getDegreeFromCenter always returns positive numbers
+        double degreeBetweenAngles = Math.abs(t1.getDegreeFromCenter() - t2.getDegreeFromCenter());
+        if (degreeBetweenAngles > 180){
+            degreeBetweenAngles = degreeBetweenAngles - 180;
+        }
+        return degreeBetweenAngles <= angle;
 
     }
 
     public static void main(String[] args) {
 
-        List<Tree> forest = new ArrayList<Tree>();
-        double angle = 12.0;
-        Tree tree1 = new Tree(40,50);
-        Tree tree2 = new Tree(40,80);
-        forest.add(tree1);
-        forest.add(tree2);
-        System.out.println(countTrees(forest, angle));
+//        List<Tree> forest = new ArrayList<Tree>();
+//        double angle = 12.0;
+//        Tree tree1 = new Tree(40,50);
+//        Tree tree2 = new Tree(40,80);
+//        forest.add(tree1);
+//        forest.add(tree2);
+//        System.out.println(countTrees(forest, angle));
     }
 }
