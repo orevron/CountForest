@@ -62,7 +62,8 @@ public class Main {
     private static int countTreesFromCertainIndexToAngleMore(List<Tree> forest, double angle, int firstTreeIndex,
                                                              int currTreesInAngle, int maxTreesInAngle) {
         int currIndex = 0;
-        while (firstTreeIndex < forest.size() && forest.get(currIndex).getDegreeFromCenter() <= angle){
+        while (firstTreeIndex < forest.size() && currIndex < forest.size() &&
+                firstTreeIndex != currIndex && forest.get(currIndex).getDegreeFromCenter() <= angle){
             if (treesCanBeFoundOnSameViewAngle(forest.get(firstTreeIndex), forest.get(currIndex), angle)){
                 currTreesInAngle++;
                 maxTreesInAngle = Math.max(currTreesInAngle, maxTreesInAngle);

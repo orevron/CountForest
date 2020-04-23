@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fc5d31a0-7ba0-4651-9be4-dddacb9bf8b3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/MainTest.java" afterPath="$PROJECT_DIR$/src/MainTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,24 +14,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state relative-caret-position="76">
+              <caret line="65" column="43" lean-forward="false" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1587654786059" expanded="true" signature="4289:4565" ph="..." />
+                <marker date="1587655121965" expanded="true" signature="4365:4641" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="662">
-              <caret line="127" column="22" lean-forward="false" selection-start-line="127" selection-start-column="22" selection-end-line="127" selection-end-column="22" />
+            <state relative-caret-position="2679">
+              <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#224#230#0" expanded="true" />
@@ -93,8 +92,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Tree.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/MainTest.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -213,7 +212,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MainTest.countTreesBigAngel">
+  <component name="RunManager" selected="JUnit.MainTest">
+    <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="CountForest" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration name="MainTest.countTrees360Angel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="CountForest" />
@@ -242,26 +261,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MainTest" />
       <option name="METHOD_NAME" value="countTreesBigAngel" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="MainTest.countTreesEmptyForest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="CountForest" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="countTreesEmptyForest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -330,19 +329,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.MainTest.countTreesEmptyForest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest.countTreesNullForest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest.countTreesZeroAngel" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.MainTest.countTrees360Angel" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MainTest.countTreesBigAngel" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.MainTest.countTreesNullForest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest.countTreesZeroAngel" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest.countTrees360Angel" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.MainTest.countTreesBigAngel" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.MainTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MainTest.countTreesBigAngel" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest.countTrees360Angel" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest.countTreesZeroAngel" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.MainTest.countTreesNullForest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.MainTest.countTreesEmptyForest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.MainTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest.countTreesBigAngel" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest.countTrees360Angel" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.MainTest.countTreesZeroAngel" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.MainTest.countTreesNullForest" />
       </list>
     </recent_temporary>
   </component>
@@ -359,19 +358,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587645342808</updated>
-      <workItem from="1587645346470" duration="9392000" />
+      <workItem from="1587645346470" duration="9694000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MainTest_countTrees360Angel - 2020.04.23 at 18h 09m 28s.xml">
-      <configuration name="MainTest.countTrees360Angel" configurationId="JUnit" />
+    <history-entry file="MainTest - 2020.04.23 at 18h 15m 23s.xml">
+      <configuration name="MainTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_countTrees360Angel - 2020.04.23 at 18h 09m 57s.xml">
-      <configuration name="MainTest.countTrees360Angel" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainTest_countTrees360Angel - 2020.04.23 at 18h 10m 06s.xml">
-      <configuration name="MainTest.countTrees360Angel" configurationId="JUnit" />
+    <history-entry file="MainTest - 2020.04.23 at 18h 19m 17s.xml">
+      <configuration name="MainTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MainTest_countTrees360Angel - 2020.04.23 at 18h 10m 59s.xml">
       <configuration name="MainTest.countTrees360Angel" configurationId="JUnit" />
@@ -388,15 +384,18 @@
     <history-entry file="MainTest_countTreesBigAngel - 2020.04.23 at 18h 13m 45s.xml">
       <configuration name="MainTest.countTreesBigAngel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_countTreesZeroAngel - 2020.04.23 at 18h 10m 34s.xml">
-      <configuration name="MainTest.countTreesZeroAngel" configurationId="JUnit" />
+    <history-entry file="MainTest_countTreesBigAngel - 2020.04.23 at 18h 18m 37s.xml">
+      <configuration name="MainTest.countTreesBigAngel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainTest_countTreesBigAngel - 2020.04.23 at 18h 18m 43s.xml">
+      <configuration name="MainTest.countTreesBigAngel" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MainTest_countTreesZeroAngel - 2020.04.23 at 18h 10m 56s.xml">
       <configuration name="MainTest.countTreesZeroAngel" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9392000" />
+    <option name="totallyTimeSpent" value="9694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
@@ -411,7 +410,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32806325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32806325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -443,30 +442,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>24</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>51</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
           <line>63</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>31</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -500,10 +481,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="65" column="43" lean-forward="false" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1587655121965" expanded="true" signature="4365:4641" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="127" column="22" lean-forward="false" selection-start-line="127" selection-start-column="22" selection-end-line="127" selection-end-column="22" />
+        <state relative-caret-position="2679">
+          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#224#230#0" expanded="true" />
@@ -514,17 +506,6 @@
             <element signature="e#2282#2288#0" expanded="true" />
             <element signature="e#2826#2832#0" expanded="true" />
             <element signature="e#3384#3390#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1587654786059" expanded="true" signature="4289:4565" ph="..." />
           </folding>
         </state>
       </provider>
