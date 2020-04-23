@@ -8,6 +8,10 @@ public class Main {
 
 
     public static int countTrees(List<Tree> forest, double angle){
+
+
+
+
         return 0;
     }
 
