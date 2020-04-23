@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -40,7 +39,7 @@ public class Main {
                         }else{
                             currTreesInAngle++;
                         }
-                        break; //TODO: check for edge cases (maybe should do+- 1 tree in currTreesInAngle)
+                        break;
                     }else{
                         currTreesInAngle--; //we will decrease by 1 currTreesInAngle
                         firstTreeIndex++;
@@ -48,7 +47,7 @@ public class Main {
                 }
             }
             currIndex++;
-            if (currIndex == forest.size()){ //we finished circle, need to keep going on angle more
+            if (currIndex == forest.size()){ //we finished circle, need to keep going on +angle more
                 maxTreesInAngle = countTreesFromCertainIndexToAngleMore(forest, angle, firstTreeIndex,
                         currTreesInAngle, maxTreesInAngle);
             }
@@ -99,12 +98,5 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        List<Tree> forest = new ArrayList<Tree>();
-//        double angle = 12.0;
-//        Tree tree1 = new Tree(40,50);
-//        Tree tree2 = new Tree(40,80);
-//        forest.add(tree1);
-//        forest.add(tree2);
-//        System.out.println(countTrees(forest, angle));
     }
 }
