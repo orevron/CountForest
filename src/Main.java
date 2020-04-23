@@ -82,10 +82,11 @@ public class Main {
     public static void main(String[] args) {
 
         List<Tree> forest = new ArrayList<Tree>();
-        double angle = 10.0;
+        double angle = 12.0;
         Tree tree1 = new Tree(40,50);
-        tree1.calculateAndSetDegree(0,0);
-        System.out.println(tree1.getDegreeFromCenter());
+        Tree tree2 = new Tree(40,80);
+        forest.add(tree1);
+        forest.add(tree2);
         System.out.println(countTrees(forest, angle));
     }
 }
