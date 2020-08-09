@@ -7,11 +7,6 @@ resource "aws_instance" "web_host" {
     "${aws_security_group.web-node.id}"]
   subnet_id = "${aws_subnet.web_subnet.id}"
   user_data = <<EOF
-#! /bin/bash
-sudo apt-get update
-sudo apt-get install -y apache2
-sudo systemctl start apache2
-sudo systemctl enable apache2
 export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMAAA
 export AWS_SECRET_ACCESS_KEY=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
 export AWS_DEFAULT_REGION=us-west-2
@@ -61,13 +56,6 @@ resource "aws_security_group" "web-node" {
     cidr_blocks = [
       "0.0.0.0/0"]
   }
-  egress {
-    from_port = 0
-    to_port   = 0
-    protocol  = "-1"
-    cidr_blocks = [
-      "0.0.0.0/0"]
-  }
   depends_on = [aws_vpc.web_vpc]
 }
 
@@ -96,7 +84,13 @@ resource "aws_subnet" "web_subnet2" {
   cidr_block              = "172.16.11.0/24"
   availability_zone       = var.availability_zone2
   map_public_ip_on_launch = true
-
+  egress {
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
+    cidr_blocks = [
+      "0.0.0.0/0"]
+  }
   tags = {
     Name = "${local.resource_prefix.value}-subnet2"
   }
@@ -134,6 +128,13 @@ resource "aws_route" "public_internet_gateway" {
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = aws_internet_gateway.web_igw.id
 
+  egress {
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
+    cidr_blocks = [
+      "0.0.0.0/0"]
+  }
   timeouts {
     create = "5m"
   }
@@ -165,7 +166,13 @@ resource "aws_flow_log" "vpcflowlogs" {
 resource "aws_s3_bucket" "flowbucket" {
   bucket        = "${local.resource_prefix.value}-flowlogs"
   force_destroy = true
-
+  egress {
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
+    cidr_blocks = [
+      "0.0.0.0/0"]
+  }
   tags = {
     Name        = "${local.resource_prefix.value}-flowlogs"
     Environment = local.resource_prefix.value
