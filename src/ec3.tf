@@ -105,6 +105,37 @@ resource "aws_internet_gateway" "web_igw" {
   }
 }
 
+
+resource "aws_internet_gateway" "web_igw" {
+  vpc_id = aws_vpc.web_vpc.id
+
+  tags = {
+    Name = "${local.resource_prefix.value}-igw"
+  }
+}
+resource "aws_internet_gateway" "web_igw" {
+  vpc_id = aws_vpc.web_vpc.id
+
+  tags = {
+    Name = "${local.resource_prefix.value}-igw"
+  }
+}
+resource "aws_internet_gateway" "web_igw" {
+  vpc_id = aws_vpc.web_vpc.id
+
+  tags = {
+    Name = "${local.resource_prefix.value}-igw"
+  }
+}
+resource "aws_internet_gateway" "web_igw" {
+  vpc_id = aws_vpc.web_vpc.id
+
+  tags = {
+    Name = "${local.resource_prefix.value}-igw"
+  }
+}
+
+
 resource "aws_route_table" "web_rtb" {
   vpc_id = aws_vpc.web_vpc.id
 
@@ -176,6 +207,13 @@ resource "aws_s3_bucket" "flowbucket" {
   tags = {
     Name        = "${local.resource_prefix.value}-flowlogs"
     Environment = local.resource_prefix.value
+  }
+}
+resource "aws_internet_gateway" "web_igw" {
+  vpc_id = aws_vpc.web_vpc.id
+
+  tags = {
+    Name = "${local.resource_prefix.value}-igw"
   }
 }
 
