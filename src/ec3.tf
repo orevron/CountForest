@@ -1,3 +1,4 @@
+# some comment
 resource "aws_instance" "web_host" {
   # ec2 have plain text secrets in user data
   ami           = "${var.ami}"
@@ -247,3 +248,4 @@ output "public_subnet2" {
   description = "The ID of the Public subnet"
   value       = aws_subnet.web_subnet2.id
 }
+# some comment
