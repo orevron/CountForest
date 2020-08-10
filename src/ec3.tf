@@ -146,35 +146,6 @@ resource "aws_internet_gateway" "web_igw" {
 }
 
 
-resource "aws_internet_gateway" "web_igw" {
-  vpc_id = aws_vpc.web_vpc.id
-
-  tags = {
-    Name = "${local.resource_prefix.value}-igw"
-  }
-}
-resource "aws_internet_gateway" "web_igw" {
-  vpc_id = aws_vpc.web_vpc.id
-
-  tags = {
-    Name = "${local.resource_prefix.value}-igw"
-  }
-}
-resource "aws_internet_gateway" "web_igw" {
-  vpc_id = aws_vpc.web_vpc.id
-
-  tags = {
-    Name = "${local.resource_prefix.value}-igw"
-  }
-}
-resource "aws_internet_gateway" "web_igw" {
-  vpc_id = aws_vpc.web_vpc.id
-
-  tags = {
-    Name = "${local.resource_prefix.value}-igw"
-  }
-}
-
 
 resource "aws_route_table" "web_rtb" {
   vpc_id = aws_vpc.web_vpc.id
