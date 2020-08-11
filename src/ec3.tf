@@ -37,6 +37,8 @@ resource "aws_ebs_snapshot" "example_snapshot" {
   }
 }
 
+#dfgdfgdf
+
 resource "aws_security_group" "web-node" {
   # security group is open to the world in SSH port
   name        = "${local.resource_prefix.value}-sg"
