@@ -47,6 +47,8 @@ resource "aws_volume_attachment" "ebs_att" {
   instance_id = "${aws_instance.web_host.id}"
 }
 
+
+# change
 resource "aws_security_group" "web-node" {
   # security group is open to the world in SSH port
   name        = "${local.resource_prefix.value}-sg"
