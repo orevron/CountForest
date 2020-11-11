@@ -30,7 +30,6 @@ resource "aws_ebs_volume" "web_host_storage" {
   tags = {
     Name = "${local.resource_prefix.value}-ebs"
   }
-  encrypted = true
 }
 
 resource "aws_ebs_snapshot" "example_snapshot" {
@@ -170,9 +169,6 @@ resource "aws_s3_bucket" "flowbucket" {
   tags = {
     Name        = "${local.resource_prefix.value}-flowlogs"
     Environment = local.resource_prefix.value
-  }
-  versioning {
-    enabled = true
   }
 }
 
