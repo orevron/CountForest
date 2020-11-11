@@ -30,6 +30,7 @@ resource "aws_ebs_volume" "web_host_storage" {
   tags = {
     Name = "${local.resource_prefix.value}-ebs"
   }
+  encrypted = true
 }
 
 resource "aws_ebs_snapshot" "example_snapshot" {
@@ -169,13 +170,6 @@ resource "aws_s3_bucket" "flowbucket" {
   tags = {
     Name        = "${local.resource_prefix.value}-flowlogs"
     Environment = local.resource_prefix.value
-  }
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        sse_algorithm = "AES256"
-      }
-    }
   }
 }
 
