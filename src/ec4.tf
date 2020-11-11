@@ -26,7 +26,6 @@ resource "aws_ebs_volume" "web_host_storage" {
   availability_zone = "${var.availability_zone}"
   #encrypted         = false  # Setting this causes the volume to be recreated on apply
   size = 1
-  blbla = true;
 }
 
 resource "aws_ebs_snapshot" "example_snapshot" {
@@ -34,6 +33,9 @@ resource "aws_ebs_snapshot" "example_snapshot" {
   volume_id   = "${aws_ebs_volume.web_host_storage.id}"
   description = "${local.resource_prefix.value}-ebs-snapshot"
   tags = {
+    Name = "${local.resource_prefix.value}-ebs-snapshot"
+  }
+    tags = {
     Name = "${local.resource_prefix.value}-ebs-snapshot"
   }
 }
