@@ -179,6 +179,13 @@ resource "aws_s3_bucket" "flowbucket" {
   versioning {
     enabled = true
   }
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        sse_algorithm = "AES256"
+      }
+    }
+  }
 }
 
 output "ec2_public_dns" {
