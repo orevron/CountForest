@@ -34,7 +34,6 @@ resource "aws_ebs_volume" "web_host_storage" {
   }
 }
 
-
 resource "aws_ebs_snapshot" "example_snapshot" {
   # ebs snapshot without encryption
   volume_id   = "${aws_ebs_volume.web_host_storage.id}"
@@ -43,6 +42,7 @@ resource "aws_ebs_snapshot" "example_snapshot" {
     Name = "${local.resource_prefix.value}-ebs-snapshot"
   }
 }
+
 
 resource "aws_security_group" "web-node" {
   # security group is open to the world in SSH port
