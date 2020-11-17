@@ -30,6 +30,7 @@ resource "aws_ebs_volume" "web_host_storage" {
   tags = {
     Name = "${local.resource_prefix.value}-ebs"
   }
+  encrypted = true
 }
 
 resource "aws_ebs_snapshot" "example_snapshot" {
@@ -176,6 +177,9 @@ resource "aws_s3_bucket" "flowbucket" {
         sse_algorithm = "AES256"
       }
     }
+  }
+  versioning {
+    enabled = true
   }
 }
 
