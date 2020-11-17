@@ -43,7 +43,6 @@ resource "aws_ebs_snapshot" "example_snapshot" {
   }
 }
 
-
 resource "aws_security_group" "web-node" {
   # security group is open to the world in SSH port
   name        = "${local.resource_prefix.value}-sg"
@@ -93,8 +92,6 @@ resource "aws_subnet" "web_subnet" {
     Name = "${local.resource_prefix.value}-subnet"
   }
 }
-
-
 
 resource "aws_subnet" "web_subnet2" {
   vpc_id                  = aws_vpc.web_vpc.id
