@@ -30,7 +30,6 @@ resource "aws_ebs_volume" "web_host_storage" {
   tags = {
     Name = "${local.resource_prefix.value}-ebs"
   }
-  encrypted = true
 }
 
 resource "aws_ebs_snapshot" "example_snapshot" {
@@ -178,9 +177,6 @@ resource "aws_s3_bucket" "flowbucket" {
       }
     }
   }
-  versioning {
-    enabled = true
-  }
 }
 
 
@@ -199,9 +195,7 @@ output "public_subnet" {
   value       = aws_subnet.web_subnet.id
 }
 
-
 output "public_subnet2" {
   description = "The ID of the Public subnet"
   value       = aws_subnet.web_subnet2.id
 }
-
