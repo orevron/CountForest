@@ -18,6 +18,7 @@ resource azurerm_app_service "app-service1" {
   site_config {
     min_tls_version = "1.1"
   }
+  client_cert_enabled = true
 }
 
 resource azurerm_app_service "app-service2" {
