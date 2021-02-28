@@ -6,6 +6,7 @@ resource "aws_instance" "web_host" {
   vpc_security_group_ids = [
   "${aws_security_group.web-node.id}"]
   subnet_id = "${aws_subnet.web_subnet.id}"
+  # comment
   user_data = <<EOF
 #! /bin/bash
 sudo apt-get update
@@ -78,6 +79,7 @@ resource "aws_security_group" "web-node" {
 }
 
 resource "aws_vpc" "web_vpc" {
+    # comment
   cidr_block           = "172.16.0.0/16"
   enable_dns_hostnames = true
   enable_dns_support   = true
@@ -87,6 +89,7 @@ resource "aws_vpc" "web_vpc" {
 }
 
 resource "aws_subnet" "web_subnet" {
+    # comment
   vpc_id                  = aws_vpc.web_vpc.id
   cidr_block              = "172.16.10.0/24"
   availability_zone       = var.availability_zone
@@ -101,6 +104,7 @@ resource "aws_subnet" "web_subnet2" {
   vpc_id                  = aws_vpc.web_vpc.id
   cidr_block              = "172.16.11.0/24"
   availability_zone       = var.availability_zone2
+    # comment
   map_public_ip_on_launch = true
 
   tags = {
@@ -119,7 +123,7 @@ resource "aws_internet_gateway" "web_igw" {
 
 resource "aws_route_table" "web_rtb" {
   vpc_id = aws_vpc.web_vpc.id
-
+  # comment
   tags = {
     Name = "${local.resource_prefix.value}-rtb"
   }
@@ -137,6 +141,7 @@ resource "aws_route_table_association" "rtbassoc2" {
 
 resource "aws_route" "public_internet_gateway" {
   route_table_id         = aws_route_table.web_rtb.id
+    # comment
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = aws_internet_gateway.web_igw.id
 
@@ -149,6 +154,7 @@ resource "aws_route" "public_internet_gateway" {
 resource "aws_network_interface" "web-eni" {
   subnet_id   = aws_subnet.web_subnet.id
   private_ips = ["172.16.10.100"]
+  # comment
 
   tags = {
     Name = "${local.resource_prefix.value}-primary_network_interface"
@@ -160,6 +166,7 @@ resource "aws_flow_log" "vpcflowlogs" {
   log_destination      = aws_s3_bucket.flowbucket.arn
   log_destination_type = "s3"
   traffic_type         = "ALL"
+    # comment
   vpc_id               = aws_vpc.web_vpc.id
 
   tags = {
@@ -194,6 +201,7 @@ output "public_subnet" {
 }
 
 output "public_subnet2" {
+    # comment
   description = "The ID of the Public subnet"
   value       = aws_subnet.web_subnet2.id
 }
