@@ -183,6 +183,7 @@ output "vpc_id" {
 output "public_subnet" {
   description = "The ID of the Public subnet"
   value       = aws_subnet.web_subnet.id
+  #commit to master
 }
 
 output "public_subnet2" {
