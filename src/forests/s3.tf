@@ -27,6 +27,7 @@ resource "aws_s3_bucket" "financials" {
   # bucket is not encrypted
   # bucket does not have access logs
   # bucket does not have versioning
+  
   bucket        = "${local.resource_prefix.value}-financials"
   acl           = "private"
     # comment
@@ -57,6 +58,7 @@ resource "aws_s3_bucket" "operations" {
 
 resource "aws_s3_bucket" "data_science" {
   # bucket is not encrypted
+  
   bucket = "${local.resource_prefix.value}-data-science"
   acl    = "private"
     # comment
@@ -77,5 +79,6 @@ resource "aws_s3_bucket" "logs" {
   tags = {
     Name        = "${local.resource_prefix.value}-logs"
     Environment = local.resource_prefix.value
+    
   }
 }
