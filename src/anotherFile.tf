@@ -2,6 +2,7 @@ resource "aws_instance" "web_host" {
   # ec2 have plain text secrets in user data
   ami           = "${var.ami}"
   instance_type = "t2.nano"
+  
 
   
   vpc_security_group_ids = [
@@ -25,6 +26,7 @@ EOF
 
 resource "aws_ebs_volume" "web_host_storage" {
   availability_zone = "${var.availability_zone}"
+  
   size = 1
   tags = {
     Name = "${local.resource_prefix.value}-ebs"
@@ -34,6 +36,7 @@ resource "aws_ebs_volume" "web_host_storage" {
 resource "aws_ebs_snapshot" "example_snapshot" {
   # ebs snapshot without encryption
   volume_id   = "${aws_ebs_volume.web_host_storage.id}"
+  
   description = "${local.resource_prefix.value}-ebs-snapshot"
   tags = {
     
@@ -52,6 +55,7 @@ resource "aws_security_group" "web-node" {
     from_port = 80
     to_port   = 80
     protocol  = "tcp"
+    
     cidr_blocks = [
       "0.0.0.0/0"]
   }
@@ -66,6 +70,7 @@ resource "aws_security_group" "web-node" {
     from_port = 0
     to_port   = 0
     protocol  = "-1"
+    
     cidr_blocks = [
       "0.0.0.0/0"]
   }
@@ -79,6 +84,7 @@ resource "aws_vpc" "web_vpc" {
   
   tags = {
     Name = "${local.resource_prefix.value}-vpc"
+    
   }
 }
 
@@ -86,6 +92,7 @@ resource "aws_subnet" "web_subnet" {
   vpc_id                  = aws_vpc.web_vpc.id
   cidr_block              = "172.16.10.0/24"
   availability_zone       = var.availability_zone
+  
   
   map_public_ip_on_launch = true
 
@@ -97,6 +104,7 @@ resource "aws_subnet" "web_subnet" {
 resource "aws_subnet" "web_subnet2" {
   vpc_id                  = aws_vpc.web_vpc.id
   cidr_block              = "172.16.11.0/24"
+  
   availability_zone       = var.availability_zone2
   
   map_public_ip_on_launch = true
@@ -125,6 +133,7 @@ resource "aws_route_table" "web_rtb" {
 
 resource "aws_route_table_association" "rtbassoc" {
   subnet_id      = aws_subnet.web_subnet.id
+  
   route_table_id = aws_route_table.web_rtb.id
   
 }
@@ -138,6 +147,7 @@ resource "aws_route_table_association" "rtbassoc2" {
 resource "aws_route" "public_internet_gateway" {
   route_table_id         = aws_route_table.web_rtb.id
   destination_cidr_block = "0.0.0.0/0"
+  
   
   gateway_id             = aws_internet_gateway.web_igw.id
 
@@ -160,6 +170,7 @@ resource "aws_network_interface" "web-eni" {
 # VPC Flow Logs to S3
 resource "aws_flow_log" "vpcflowlogs" {
   log_destination      = aws_s3_bucket.flowbucket.arn
+  
   log_destination_type = "s3"
   
   traffic_type         = "ALL"
