@@ -53,9 +53,11 @@ resource "aws_security_group" "web-node" {
     to_port   = 80
     protocol  = "tcp"
     cidr_blocks = [
+     
       "0.0.0.0/0"]
   }
   ingress {
+    
     from_port = 22
     to_port   = 22
     protocol  = "tcp"
@@ -73,6 +75,7 @@ resource "aws_security_group" "web-node" {
 }
 
 resource "aws_vpc" "web_vpc" {
+  
   cidr_block           = "172.16.0.0/16"
   enable_dns_hostnames = true
   enable_dns_support   = true
@@ -91,12 +94,14 @@ resource "aws_subnet" "web_subnet" {
 
   tags = {
     Name = "${local.resource_prefix.value}-subnet"
+    
   }
 }
 
 resource "aws_subnet" "web_subnet2" {
   vpc_id                  = aws_vpc.web_vpc.id
   cidr_block              = "172.16.11.0/24"
+  
   availability_zone       = var.availability_zone2
   
   map_public_ip_on_launch = true
@@ -111,6 +116,7 @@ resource "aws_internet_gateway" "web_igw" {
   vpc_id = aws_vpc.web_vpc.id
 
   tags = {
+    
     Name = "${local.resource_prefix.value}-igw"
     
   }
@@ -125,6 +131,7 @@ resource "aws_route_table" "web_rtb" {
 
 resource "aws_route_table_association" "rtbassoc" {
   subnet_id      = aws_subnet.web_subnet.id
+  
   route_table_id = aws_route_table.web_rtb.id
   
 }
@@ -140,6 +147,7 @@ resource "aws_route" "public_internet_gateway" {
   destination_cidr_block = "0.0.0.0/0"
   
   gateway_id             = aws_internet_gateway.web_igw.id
+  
 
   timeouts {
     create = "5m"
@@ -163,6 +171,7 @@ resource "aws_flow_log" "vpcflowlogs" {
   log_destination_type = "s3"
   
   traffic_type         = "ALL"
+  
   vpc_id               = aws_vpc.web_vpc.id
 
   tags = {
@@ -182,6 +191,7 @@ resource "aws_s3_bucket" "flowbucket" {
 
 output "ec2_public_dns" {
   description = "Web Host Public DNS name"
+  
   value       = aws_instance.web_host.public_dns
   
 }
@@ -189,6 +199,7 @@ output "ec2_public_dns" {
 output "vpc_id" {
   description = "The ID of the VPC"
   value       = aws_vpc.web_vpc.id
+  
 }
 
 output "public_subnet" {
@@ -198,6 +209,7 @@ output "public_subnet" {
 }
 
 output "public_subnet2" {
+  
   description = "The ID of the Public subnet"
   value       = aws_subnet.web_subnet2.id
   
