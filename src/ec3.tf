@@ -1,4 +1,5 @@
 resource "aws_instance" "web_host" {
+  # checkov:skip=CKV_AWS_46: Web Hosttt
   # ec2 have plain text secrets in user data
   ami           = "${var.ami}"
   instance_type = "t2.nano"
