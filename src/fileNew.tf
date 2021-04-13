@@ -1,5 +1,6 @@
 resource "aws_instance" "web_host" {
   # ec2 have plain text secrets in user data
+  # checkov:skip=CKV_AWS_46: test justification
   ami           = "${var.ami}"
   instance_type = "t2.nano"
 
