@@ -12,6 +12,7 @@ resource "aws_instance" "web_host" {
 sudo apt-get update
 sudo apt-get install -y apache2
 sudo systemctl start apache2
+
 sudo systemctl enable apache2
 export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMAAA
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMAAAKEY
@@ -44,6 +45,7 @@ resource "aws_ebs_snapshot" "example_snapshot" {
 
 resource "aws_volume_attachment" "ebs_att" {
   device_name = "/dev/sdh"
+  
   volume_id   = "${aws_ebs_volume.web_host_storage.id}"
   instance_id = "${aws_instance.web_host.id}"
 }
@@ -52,6 +54,7 @@ resource "aws_security_group" "web-node" {
   # security group is open to the world in SSH port
   name        = "${local.resource_prefix.value}-sg"
   description = "${local.resource_prefix.value} Security Group"
+  
   vpc_id      = aws_vpc.web_vpc.id
 
   ingress {
@@ -65,6 +68,7 @@ resource "aws_security_group" "web-node" {
     from_port = 22
     to_port   = 22
     protocol  = "tcp"
+    
     cidr_blocks = [
     "0.0.0.0/0"]
   }
@@ -82,6 +86,7 @@ resource "aws_vpc" "web_vpc" {
     # comment
   cidr_block           = "172.16.0.0/16"
   enable_dns_hostnames = true
+  
   enable_dns_support   = true
   tags = {
     Name = "${local.resource_prefix.value}-vpc"
@@ -153,6 +158,7 @@ resource "aws_route" "public_internet_gateway" {
 
 resource "aws_network_interface" "web-eni" {
   subnet_id   = aws_subnet.web_subnet.id
+  
   private_ips = ["172.16.10.100"]
   # comment
 
